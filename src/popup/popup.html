@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EDS Navigator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../../icons/icon48.png" alt="" width="32" height="32">
+    <div class="title">
+      <h1>EDS Navigator</h1>
+      <p id="ctx" class="sub"></p>
+    </div>
+    <span id="env" class="badge" hidden></span>
+  </header>
+
+  <div class="bar">
+    <input id="search" type="search" autocomplete="off" spellcheck="false"
+           placeholder="Filter links, press Enter to open the first" aria-label="Filter links">
+    <form id="branchForm" hidden>
+      <input id="branch" autocomplete="off" spellcheck="false" placeholder="Open this page on branch…" aria-label="Branch name">
+      <button type="submit" class="go">Go</button>
+    </form>
+  </div>
+
+  <main id="groups"></main>
+
+  <footer>
+    <label class="switch">
+      <input type="checkbox" id="newTab">
+      <span class="track"></span>
+      <span class="label">Open links in new tab</span>
+    </label>
+    <button id="opts" class="ghost" type="button">Options</button>
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

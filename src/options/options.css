@@ -1,0 +1,17 @@
+:root { color-scheme: light dark; --border: #c9c9d6; --accent: #4f46e5; --muted: #6b6b7b; }
+body { max-width: 720px; margin: 32px auto; padding: 0 20px; font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+h1 { font-size: 22px; }
+h2 { font-size: 15px; margin: 0 0 4px; }
+section { margin: 28px 0; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.hint { color: var(--muted); font-size: 13px; margin: 4px 0 10px; }
+form { display: grid; gap: 10px; margin-top: 12px; }
+label { display: grid; gap: 4px; font-size: 13px; }
+input, textarea { padding: 7px 9px; border: 1px solid var(--border); border-radius: 6px; font: inherit; background: transparent; color: inherit; }
+input:focus-visible, textarea:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button { padding: 7px 14px; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+form button[type="submit"] { justify-self: start; background: var(--accent); border-color: var(--accent); color: #fff; }
+.project { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 6px; }
+.project small { color: var(--muted); }
+code { background: rgba(127,127,127,.18); padding: 1px 5px; border-radius: 4px; }
+textarea { width: 100%; box-sizing: border-box; font-family: ui-monospace, Menlo, Consolas, monospace; }

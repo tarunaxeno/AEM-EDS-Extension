@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EDS Navigator · Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <h1>EDS Navigator · Options</h1>
+
+  <section>
+    <h2>Projects</h2>
+    <p class="hint">
+      Add each project once. Needed for the Universal Editor link and for production / custom domains.
+      Preview and Live links work without any setup.
+    </p>
+    <div id="projects"></div>
+    <form id="projectForm" autocomplete="off">
+      <label>GitHub org <input name="org" required placeholder="my-org"></label>
+      <label>Site / repo <input name="site" required placeholder="my-site"></label>
+      <label>Default branch <input name="ref" placeholder="main"></label>
+      <label>Production host <input name="prodHost" placeholder="www.example.com"></label>
+      <label>Author host <input name="authorHost" placeholder="author-p12345-e67890.adobeaemcloud.com"></label>
+      <label>Content root <input name="contentRoot" placeholder="/content/my-site"></label>
+      <label>IMS org (the part after @ in Experience Cloud URLs) <input name="imsOrg" placeholder="myimsorg"></label>
+      <button type="submit">Save project</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Automatic Universal Editor link</h2>
+    <p class="hint">
+      Optionally ask the Adobe Admin API for the exact editor URL of the page you are on.
+      Needs permission for admin.hlx.page and works best while you are signed in to AEM.
+    </p>
+    <button id="adminPerm" type="button">Enable lookup</button>
+    <span id="adminState" class="hint"></span>
+  </section>
+
+  <section>
+    <h2>My links</h2>
+    <p class="hint">
+      One per line: <code>Label | URL</code>. You can use <code>{org}</code>, <code>{site}</code>,
+      <code>{ref}</code>, <code>{path}</code> and <code>{host}</code> in the URL.
+    </p>
+    <textarea id="customLinks" rows="6" spellcheck="false"
+      placeholder="Cloud Manager | https://my.cloudmanager.adobe.com/&#10;Repo issues | https://github.com/{org}/{site}/issues"></textarea>
+    <button id="saveLinks" type="button">Save links</button>
+    <span id="linksState" class="hint"></span>
+  </section>
+
+  <section>
+    <h2>Keyboard shortcuts</h2>
+    <p class="hint">
+      <strong>Alt+Shift+L</strong> switches the current page between Preview and Live.
+      <strong>Alt+Shift+E</strong> opens it in the Universal Editor.
+      To change them, open <code>brave://extensions/shortcuts</code> (or <code>chrome://extensions/shortcuts</code>) in the address bar.
+    </p>
+  </section>
+
+  <section>
+    <h2>Backup</h2>
+    <button id="export" type="button">Export settings</button>
+    <button id="import" type="button">Import settings</button>
+    <input id="file" type="file" accept="application/json" hidden>
+  </section>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>
